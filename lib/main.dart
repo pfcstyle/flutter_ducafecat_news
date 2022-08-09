@@ -30,8 +30,38 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const WelcomePage(),
+      child: const LayoutWidget(),
     );
   }
 }
+
+class LayoutWidget extends StatelessWidget {
+  const LayoutWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Text('title'),
+      ),
+      body: Column(
+        children: [
+          Row(
+            children: const [
+              Spacer(),
+              Text('aaaaaaaaaaaab')
+            ]
+          ),
+          const Text('aaaaaaaaaa'),
+          const Text('aaaaaaaa'),
+          Container(
+            child: Text(';')
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 

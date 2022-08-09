@@ -15,11 +15,11 @@ class StorageUtil {
     _storage = LocalStorage(STORAGE_MASTER_KEY);
   }
 
-  String getItem(String key) {
+  String? getItem(String key) {
     return _storage.getItem(key);
   }
 
-  Future<void> setItem(String key, String val) async {
+  Future<void> setItem(String key, String? val) async {
     await _storage.setItem(key, val);
   }
 }

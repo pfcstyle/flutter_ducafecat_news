@@ -197,12 +197,14 @@ class HttpUtil {
   }
 
   /// 读取本地配置
-  Options getLocalOptions() {
-    Options options;
-    String token = StorageUtil().getItem(STORAGE_USER_TOKEN_KEY);
-    options = Options(headers: {
-      'Authorization': 'Bearer $token',
-    });
+  Options? getLocalOptions() {
+    Options? options;
+    String? token = StorageUtil().getItem(STORAGE_USER_TOKEN_KEY);
+    if (token != null) {
+      options = Options(headers: {
+        'Authorization': 'Bearer $token',
+      });
+    }
     return options;
   }
 
